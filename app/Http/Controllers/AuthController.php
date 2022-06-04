@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Http\User;
+use App\Models\User;
 
 class AuthController extends Controller
 {
@@ -34,7 +34,6 @@ class AuthController extends Controller
     public function login(Request $request){
         // validates fields
         $attrs = $request->validate([
-            'name' => 'required|string',
             'email' => 'required|email',
             'password' => 'required|min:6',
         ]);
