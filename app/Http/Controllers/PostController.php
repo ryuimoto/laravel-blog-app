@@ -93,5 +93,8 @@ class PostController extends Controller
         $post->likes()->delete();
         $post->delete();
 
+        return response([
+            'message' => 'Post deleted',
+        ],200);
     }
 }
