@@ -11,14 +11,14 @@ class PostController extends Controller
     // get all posts
     public function index(){
         return response([
-            'posts' => Post::orderBy('created_at','desc')->with('user:id,name,image')->withCount('comments','likes')->get();
+            'posts' => Post::orderBy('created_at','desc')->with('user:id,name,image')->withCount('comments','likes')->get(),
         ],200);   
     }
 
     // get single post
     public function show($id){
         return response([
-            'post' => Post::where('id',$id)->withCount('comments','likes')->get();
+            'post' => Post::where('id',$id)->withCount('comments','likes')->get(),
         ],200);
     }
 
