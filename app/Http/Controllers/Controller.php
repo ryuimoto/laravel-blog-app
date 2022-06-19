@@ -14,7 +14,7 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function saveImage($image,$path = 'public'){
-        if($image){
+        if(!$image){
             return null;
         }
 
